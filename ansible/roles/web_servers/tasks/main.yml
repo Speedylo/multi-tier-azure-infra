@@ -1,0 +1,14 @@
+- name: Install nginx
+  tags: nginx,ubuntu
+  apt:
+    name: nginx
+    state: present
+
+- name: Copy default html file for website
+  tags: nginx,ubuntu
+  copy:
+    src: default_site.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'

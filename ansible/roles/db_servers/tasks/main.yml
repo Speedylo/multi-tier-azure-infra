@@ -1,0 +1,5 @@
+- name: Install PostgreSQL
+  tags: postgresql,db,ubuntu
+  apt:
+    name: postgresql
+    state: present

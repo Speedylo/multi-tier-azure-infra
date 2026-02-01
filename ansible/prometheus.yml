@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node_exporters'
+    static_configs:
+      - targets:
+          - 10.0.2.4:9100  # DB VM node exporter
+          - 10.0.2.5:9100  # Monitoring VM node exporter
+          - 10.0.1.4:9100  # Web VM node exporter

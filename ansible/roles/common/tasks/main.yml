@@ -1,0 +1,13 @@
+- name: Install common utilities
+  tags: always
+  apt:
+    name:
+      - net-tools
+      - curl
+      - gnupg2
+      - software-properties-common
+      - unzip
+      - ca-certificates
+      - htop
+    state: present
+    update_cache: yes

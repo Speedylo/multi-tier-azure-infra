@@ -1,0 +1,28 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+  - name: Update repository index
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+  roles:
+    - common
+    - node_exporter
+
+- hosts: web_servers
+  become: true
+  roles:
+    - web_servers
+
+- hosts: db_servers
+  become: true
+  roles:
+    - db_servers
+
+- hosts: monitoring_servers
+  become: true
+  roles:
+    - monitoring_servers

@@ -1,0 +1,6 @@
+- name: Reload systemd and start node_exporter
+  systemd:
+    daemon_reload: yes
+    name: node_exporter
+    enabled: yes
+    state: started
