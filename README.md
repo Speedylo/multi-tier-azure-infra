@@ -109,13 +109,13 @@ curl http://$db_ip:9100/metrics
 - [x] Grafana login works (admin/admin)
 - [x] Node Exporter metrics scrape successfully
 
-## 📚 Key Learnings
+## Key Learnings
 
-> **Port Conflicts**: Prometheus apt installation comes with built-in Node Exporter, which conflicts with the manual install → Solution: Install Prometheus binaries to properly configure it
+ **Port Conflicts**: Prometheus apt installation comes with built-in Node Exporter, which conflicts with the manual install → Solution: Install Prometheus binaries to properly configure it
 
-> **NSG Gotcha**: Cross-subnet Prometheus scraping requires explicit NSG rules for port 9100
+ **NSG Gotcha**: Cross-subnet Prometheus scraping requires explicit NSG rules for port 9100
 
-> **Ansible Tips**:
-> - For static HTML, use `files/` directory
-> - For a service restart, use handlers
-> - For selective runs, use `--tags` for development
+ **Ansible Tips**:
+ - For static HTML, use `files/` directory
+ - For a service restart, use handlers
+ - For selective runs, use `--tags` for development
